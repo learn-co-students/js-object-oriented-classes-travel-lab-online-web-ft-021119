@@ -17,7 +17,7 @@ describe('driver', function() {
 
   describe('yearsExperienceFromBeginningOf', function() {
     it('calculates the number of years driven given an endDate', function() {
-      expect(driver.yearsExperienceFromBeginningOf('2017')).to.equal(22);
+      expect(driver.yearsExperienceFromBeginningOf('2019')).to.equal(24);
     });
   });
 });
