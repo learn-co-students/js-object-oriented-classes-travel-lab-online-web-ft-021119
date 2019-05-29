@@ -9,6 +9,16 @@ class Driver {
   };
 };
 
+let eastWest = [
+  '1st Avenue',
+  '2nd Avenue',
+  '3rd Avenue',
+  'Lexington Avenue',
+  'Park',
+  'Madison Avenue',
+  '5th Avenue'
+];
+
 class Route {
   constructor(beginningLocation, endingLocation) {
     this.beginningLocation = beginningLocation;
@@ -16,18 +26,8 @@ class Route {
   };
 
   blocksTravelled() {
-    let eastWest = [
-      '1st Avenue',
-      '2nd Avenue',
-      '3rd Avenue',
-      'Lexington Avenue',
-      'Park',
-      'Madison Avenue',
-      '5th Avenue'
-    ];
-
-    const blocksEastWest = (eastWest.indexOf(this.endingLocation.horizontal) - eastWest.indexOf(this.beginningLocation.horizontal));
-    const blocksNorthSouth = this.endingLocation.vertical - this.beginningLocation.vertical;
+    const blocksEastWest = Math.abs(eastWest.indexOf(this.endingLocation.horizontal) - eastWest.indexOf(this.beginningLocation.horizontal));
+    const blocksNorthSouth = Math.abs(this.endingLocation.vertical - this.beginningLocation.vertical);
 
     return blocksEastWest + blocksNorthSouth;
   };
